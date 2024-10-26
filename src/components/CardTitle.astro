@@ -1,0 +1,13 @@
+---
+// src/components/CardTitle.astro
+
+import { cn } from "@lib/utils"
+
+const {
+  className = "",
+} = Astro.props
+---
+
+<h3 class={cn("text-2xl font-semibold leading-none tracking-tight", className)}>
+  <slot />
+</h3>

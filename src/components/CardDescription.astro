@@ -1,0 +1,13 @@
+---
+// src/components/CardDescription.astro
+
+import { cn } from "@lib/utils"
+
+const {
+  className = "",
+} = Astro.props
+---
+
+<p class={cn("text-sm text-muted-foreground", className)}>
+  <slot />
+</p>
