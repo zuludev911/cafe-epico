@@ -1,3 +1,11 @@
+---
+import { generateWhatsAppLink } from '@lib/utils';
+import Link from './Link.astro';
+
+const message = "Hola, me gustaría comprar Café Épico.";
+const whatsappLink = generateWhatsAppLink(message);
+---
+
 <section id="cta" class="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
   <div class="w-full px-4 md:px-6">
     <div class="flex flex-col items-center space-y-4 text-center">
@@ -7,9 +15,7 @@
       <p class="max-w-[600px] text-gray-300 md:text-xl">
         Prueba Café Épico hoy y experimenta la diferencia. Satisfacción garantizada o te devolvemos tu dinero.
       </p>
-      <a class="mt-4" href="#">
-        Comprar ahora
-      </a>
+      <Link href={whatsappLink} target="_blank" variant="secondary">Comprar ahora</Link>
     </div>
   </div>
 </section>

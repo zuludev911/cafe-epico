@@ -1,0 +1,18 @@
+---
+type Variant = 'primary' | 'secondary' | 'disabled';
+// Button.astro
+const { variant = "primary", ...props } = Astro.props;
+
+// Define estilos para cada variante
+const buttonStyles = {
+  primary: "bg-gray-700 text-white hover:bg-gray-900",
+  secondary: "bg-white text-black hover:bg-gray-200",
+  disabled: "bg-gray-300 text-gray-500 cursor-not-allowed",
+};
+
+const className = buttonStyles[variant as Variant];
+---
+
+<a class={`py-2 px-4 rounded ${className}`} {...props}>
+  <slot>
+</a>
